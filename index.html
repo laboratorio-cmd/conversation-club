@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TRONWELL · Conversation Club</title>
-<meta name="description" content="TRONWELL Conversation Club: speaking practice from A0 (beginner, with Spanish support) to C2 (advanced), plus English at Work — vocabulary, idioms, expressions, conversation strategies, pronunciation, speaking games and IELTS / TOEFL speaking practice.">
+<meta name="description" content="TRONWELL Conversation Club: speaking practice from A0 (beginner, with Spanish support) to C2 (advanced), plus English at Work, an Idioms bank and a Pronunciation Lab — vocabulary, idioms, expressions, conversation strategies, pronunciation, speaking games and IELTS / TOEFL speaking practice.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.1.0/dist/twemoji.min.js" crossorigin="anonymous" defer></script>
@@ -551,7 +551,159 @@ nav button.nwork.on{background:var(--work-soft);color:var(--work-d);box-shadow:i
   .wml{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:thin}
   .wml button{flex:0 0 128px}
 }
-</style>
+
+/* ---------- Idioms + Pronunciation Lab ---------- */
+:root{--idm:#6a45c9;--idm-d:#52329f;--idm-soft:#f3effd;--prn:#d4466a;--prn-d:#b02f52;--prn-soft:#fdeef2}
+nav button.nidm{color:var(--idm)}
+nav button.nidm.on{background:var(--idm-soft);color:var(--idm-d);box-shadow:inset 0 -2px 0 var(--idm)}
+nav button.nprn{color:var(--prn)}
+nav button.nprn.on{background:var(--prn-soft);color:var(--prn-d);box-shadow:inset 0 -2px 0 var(--prn)}
+.btn.idm{background:var(--idm);color:#fff}
+.btn.idm:hover{background:var(--idm-d)}
+.btn.prn{background:var(--prn);color:#fff}
+.btn.prn:hover{background:var(--prn-d)}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.spin2.xidioms{border-top-color:var(--idm)}
+.spin2.xpron{border-top-color:var(--prn)}
+.cta.idm{background:linear-gradient(110deg,var(--idm-soft),#fff)}
+.cta.prn{background:linear-gradient(110deg,var(--prn-soft),#fff)}
+.ctas + .ctas{margin-top:16px}
+/* idioms */
+.xhero{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center;margin:8px 0 22px}
+.xhero h1{font-size:44px;line-height:1.05;letter-spacing:-.02em;margin:10px 0 12px}
+.xhero.idm h1 em{color:var(--idm);font-style:normal}
+.xhero.idm .eyebrow{color:var(--idm)}
+.xhero.idm .eyebrow::before{background:var(--idm)}
+.xstats{display:grid;gap:8px}
+.xstats button{display:flex;align-items:baseline;gap:12px;border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:10px 14px;background:#fff;text-align:left}
+.xstats button:hover{background:var(--soft)}
+.xstats b{font-size:22px;font-weight:900;color:var(--c);min-width:44px}
+.xstats span{font-weight:700;color:var(--gray);font-size:14px}
+.thgrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin:4px 0 6px}
+.thc{border:1px solid var(--line);background:#fff;border-radius:14px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;transition:.12s}
+.thc:hover{border-color:var(--idm)}
+.thc .ic{font-size:22px}
+.thc b{font-size:12.5px;line-height:1.15}
+.thc small{font-size:11px;font-weight:800;color:var(--gray-2)}
+.thc.on{background:var(--idm);border-color:var(--idm);color:#fff}
+.thc.on small{color:#e6ddff}
+.bcount{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 12px;font-weight:800;color:var(--gray)}
+.idc .ty{display:flex;align-items:center;gap:6px;color:var(--idm-d);flex-wrap:wrap}
+.idc .ty .lvtag{height:20px;min-width:30px;font-size:11px;border-radius:6px}
+.idc mark{background:#efe8ff;color:var(--idm-d);font-weight:800;border-radius:4px;padding:0 3px;font-style:normal}
+.idc .x{border-left-color:#e3d9fb}
+.xsay{font-size:12px;border-radius:8px;padding:1px 5px;background:var(--soft);border:1px solid var(--line);font-style:normal;vertical-align:middle}
+.idc .nt{grid-column:1/-1;font-size:.82em;color:var(--gray);margin-top:2px}
+.idc .src .more{font-size:11px;font-weight:800;color:var(--gray-2);align-self:center}
+.idc .es{display:block;font-style:italic;font-size:.88em;margin-top:2px}
+.bgrid.noes .idc .es{display:none}
+.bgrid.noes .idc.a2 .es{display:block}
+.esbtn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 14px;font-weight:800;font-size:14px;color:var(--gray)}
+.esbtn.on{background:var(--green-soft);border-color:var(--green);color:var(--green-d)}
+.ghint{font-weight:700;color:var(--gray);margin:16px 0 10px}
+.ghint b{color:var(--idm-d);margin-left:6px}
+.imatch{display:grid;grid-template-columns:1fr 1.3fr;gap:12px}
+.imatch > div{display:grid;gap:8px;align-content:start}
+.imatch button{text-align:left;border:2px solid var(--line);background:#fff;border-radius:12px;padding:11px 14px;font-weight:700;font-size:.95em;transition:.12s}
+.imatch .im-l{font-weight:900}
+.imatch button:hover{border-color:var(--idm)}
+.imatch button.sel{border-color:var(--idm);background:var(--idm-soft)}
+.imatch button.ok{border-color:var(--green);background:var(--green-soft);color:var(--green-d);pointer-events:none}
+.imatch button.no{border-color:var(--red);background:var(--red-soft)}
+.iq{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;max-width:860px}
+.iq .s{font-size:1.15em;font-weight:600;margin-bottom:14px;line-height:1.5}
+.iq .s mark{background:#efe8ff;color:var(--idm-d);font-weight:800;border-radius:4px;padding:0 4px}
+.iq .gap{display:inline-block;min-width:110px;border-bottom:2px solid var(--idm);color:var(--idm-d);font-weight:800;text-align:center}
+.iq .qo{grid-template-columns:1fr;margin-bottom:12px}
+.iq .fb,.pq .fb{background:var(--soft);border-radius:12px;padding:10px 12px;margin:10px 0;font-size:.93em}
+.icard{max-width:520px;min-height:230px;margin:6px auto 0;border-radius:22px;background:linear-gradient(140deg,var(--idm-soft),#fff);border:2px solid #e3d9fb;display:flex;align-items:center;justify-content:center;text-align:center;padding:26px;cursor:pointer;box-shadow:0 12px 30px rgba(106,69,201,.12)}
+.icard .f{display:grid;gap:10px;justify-items:center}
+.icard b{font-size:1.7em;letter-spacing:-.01em;color:var(--idm-d)}
+.icard small{color:var(--gray-2);font-weight:700}
+.icard.flip{background:#fff}
+.icard.flip b{font-size:1.25em}
+.icard .x{color:var(--gray);font-style:italic}
+.icard .es2{color:var(--green-d);font-weight:700}
+.iend{display:flex;flex-direction:column;align-items:center;gap:8px;margin:22px 0;padding:22px;border-radius:18px;background:var(--idm-soft)}
+.iend b{font-size:34px;color:var(--idm-d)}
+.iend span{font-weight:800}
+/* pronunciation */
+.xhero.prn h1 em{color:var(--prn);font-style:normal}
+.xhero.prn .eyebrow{color:var(--prn)}
+.xhero.prn .eyebrow::before{background:var(--prn)}
+.focs{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.focs span{background:var(--prn-soft);color:var(--prn-d);border-radius:999px;padding:5px 11px;font-weight:800;font-size:12.5px}
+.pdemo{display:grid;gap:10px}
+.pd{border:1px solid var(--line);border-left:4px solid var(--prn);border-radius:14px;padding:14px 16px;background:#fff;display:grid;gap:4px}
+.pd span{color:var(--gray);font-size:14px}
+.lvhead.prn{border-top:5px solid var(--prn)}
+.lvhead.prn .eyebrow{color:var(--prn);margin-bottom:4px}
+.lvhead.prn .eyebrow::before{background:var(--prn)}
+.punits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.pu{display:flex;gap:14px;text-align:left;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:16px;padding:16px;background:#fff;position:relative;transition:.12s}
+.pu:hover{box-shadow:0 10px 24px rgba(17,24,39,.08);transform:translateY(-2px)}
+.pu .n{flex:0 0 38px;height:38px;border-radius:12px;background:var(--c);color:#fff;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center}
+.pu small{font-size:11px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:var(--prn-d)}
+.pu h3{font-size:16.5px;line-height:1.25;margin:3px 0 5px}
+.pu p{font-size:13.5px;color:var(--gray)}
+.pu .done{display:inline-block;margin-top:8px;font-size:12px;font-weight:900;color:var(--green-d);background:var(--green-soft);border-radius:999px;padding:2px 9px}
+.phead{border-radius:22px;padding:22px 24px;background:linear-gradient(110deg,var(--prn-soft),#fff 70%);border:1px solid var(--line);border-top:5px solid var(--c);margin-bottom:16px}
+.phead .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:800;color:var(--gray);font-size:13.5px}
+.phead .meta .esbtn{padding:5px 10px;font-size:13px;margin-left:auto}
+.phead h1{font-size:34px;line-height:1.1;margin:10px 0 8px;letter-spacing:-.02em}
+.phead .goal{font-weight:700;color:var(--ink)}
+.phead .goal .es{display:block;font-size:.9em;font-weight:500;font-style:italic;color:#5b6b7d}
+.pgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:start}
+.pcard{border:1px solid var(--line);border-radius:18px;padding:18px 20px;background:#fff;margin-bottom:14px}
+.pcard h2{font-size:19px;margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pcard h2 small{flex-basis:100%;font-size:13px;font-weight:600;color:var(--gray)}
+.pcard p{margin-bottom:8px;line-height:1.55}
+.pcard.es-sp{background:linear-gradient(140deg,#fff8ef,#fff);border-color:#fbe2c6}
+.pcard.tipc{background:var(--green-xs);border-color:#cdebdc}
+.psc{font-size:13px;font-weight:900;color:var(--prn-d);background:var(--prn-soft);border-radius:999px;padding:2px 10px}
+.psc:empty{display:none}
+.pex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pe{display:flex;gap:8px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:9px 10px;background:var(--soft)}
+.pe .say{grid-row:auto;grid-column:auto;flex:0 0 34px;width:34px;height:34px}
+.pe .say.slow{background:#fff}
+.pe b{display:block}
+.how{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;color:var(--prn-d);font-weight:700;letter-spacing:.01em}
+.pe small,.pq .fb small{display:block;color:var(--gray);font-size:.82em;margin-top:2px}
+.pplist{display:grid;gap:10px}
+.pq{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:#fff}
+.pqh{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-weight:700;flex-wrap:wrap}
+.play{flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:var(--prn);color:#fff;font-size:14px;font-weight:900}
+.play.on{box-shadow:0 0 0 4px var(--prn-soft)}
+.play.slow{background:#fff;border:1px solid var(--line);font-size:16px}
+.pq .qo{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.lnk{font-weight:800;color:var(--blue);font-size:.92em;margin-left:4px}
+.toks{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px;font-size:1.08em}
+.toks.word{gap:3px}
+.tb{border:2px solid var(--line);background:#fff;border-radius:10px;padding:7px 11px;font-weight:800;transition:.1s}
+.tb:hover{border-color:var(--prn)}
+.tb.syl{padding:7px 9px}
+.tb.sel,.gp.sel{border-color:var(--prn);background:var(--prn-soft);color:var(--prn-d)}
+.tb.ok,.gp.ok{border-color:var(--green);background:var(--green-soft);color:var(--green-d)}
+.tb.no,.gp.no{border-color:var(--red);background:var(--red-soft);color:var(--red)}
+.tb.miss,.gp.miss{border-color:var(--green);border-style:dashed;color:var(--green-d)}
+.toks.link{gap:2px}
+.tk{font-weight:800;padding:6px 2px}
+.gp{border:2px dashed var(--line);background:#fff;border-radius:999px;width:30px;height:30px;font-weight:900;color:var(--gray-2)}
+.din{flex:1;min-width:200px;border:1px solid var(--line);border-radius:11px;padding:10px 13px;font-size:15px;outline:none}
+.din:focus{border-color:var(--prn)}
+.din:disabled{background:var(--soft);color:var(--ink)}
+.pq .fb b{display:block}
+.pnav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px}
+@media(max-width:1100px){.thgrid{grid-template-columns:repeat(5,minmax(0,1fr))}.punits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){
+  .xhero{grid-template-columns:1fr}
+  .xhero h1{font-size:34px}
+  .thgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .imatch{grid-template-columns:1fr}
+  .punits,.pgrid,.pex{grid-template-columns:1fr}
+  .phead h1{font-size:27px}
+}
+.xhint{margin:14px 0 0;border:1px dashed var(--idm);border-radius:14px;padding:10px 14px;background:var(--idm-soft);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-weight:700;color:var(--idm-d)}.xhint button{font-weight:800;color:#fff;background:var(--idm);border-radius:10px;padding:7px 12px}</style>
 </head>
 <body>
 <header><div class="hw">
@@ -569,10 +721,12 @@ nav button.nwork.on{background:var(--work-soft);color:var(--work-d);box-shadow:i
     <button class="nwork" data-v="work" onclick="go('work')">💼 English at Work</button>
     <button class="nexam" data-v="exam" onclick="go('exam')">🎓 Exam Zone</button>
     <button data-v="bank" onclick="go('bank')">📚 Language Bank</button>
+    <button class="nidm" data-v="idioms" onclick="go('idioms')">🗝️ Idioms</button>
+    <button class="nprn" data-v="pron" onclick="go('pron')">🗣️ Pronunciation</button>
   </nav>
 </div></header>
 <main id="app"></main>
-<footer><b>TRONWELL</b> · Conversation Club · English at Work · A0 → C2 · Speaking practice for online classes and self-study</footer>
+<footer><b>TRONWELL</b> · Conversation Club · English at Work · Idioms · Pronunciation Lab · A0 → C2 · Speaking practice for online classes and self-study</footer>
 <div class="toast" id="toast"></div>
 <script>
 var TOPICS = {"everyday":{"name":"Everyday Life","ic":"☕","dom":"social"},"personal":{"name":"Personal Stories","ic":"📖","dom":"social","low":"About Me"},"music":{"name":"Music","ic":"🎵","dom":"social"},"plans":{"name":"Plans & Future","ic":"🗓️","dom":"social"},"travel":{"name":"Travel","ic":"✈️","dom":"social"},"humor":{"name":"Humor","ic":"😂","dom":"social"},"curious":{"name":"Fun Facts & Curiosities","ic":"🔭","dom":"social","low":"Fun Facts"},"hobbies":{"name":"Hobbies","ic":"🎨","dom":"social"},"food":{"name":"Food & Culture","ic":"🍽️","dom":"social","low":"Food"},"relationships":{"name":"Friendship & Relationships","ic":"🤝","dom":"social","low":"Family & Friends"},"careers":{"name":"Jobs & Careers","ic":"💼","dom":"work","low":"Jobs"},"meetings":{"name":"Meetings & Teamwork","ic":"👥","dom":"work","low":"Working Together"},"negotiation":{"name":"Negotiation & Persuasion","ic":"🗣️","dom":"work","low":"Shopping & Deals"},"presentations":{"name":"Presentations & Pitching","ic":"🎤","dom":"work","low":"Talking About Work"},"workplace":{"name":"Workplace Problems","ic":"🧩","dom":"work","low":"Problems at Work"},"tech":{"name":"Technology & AI","ic":"🤖","dom":"debate","low":"Technology"},"environment":{"name":"Environment & Climate","ic":"🌱","dom":"debate","low":"Nature & Weather"},"health":{"name":"Health & Well-being","ic":"🧘","dom":"debate","low":"Health"},"media":{"name":"Media & Fake News","ic":"📰","dom":"debate","low":"TV, News & Internet"},"ethics":{"name":"Ethics & Dilemmas","ic":"⚖️","dom":"debate","low":"Right & Wrong"},"greetings":{"name":"Hello & Goodbye","ic":"👋","dom":"social","lv":"A0"},"spelling":{"name":"Names & Spelling","ic":"🔤","dom":"social","lv":"A0"},"countries":{"name":"Countries & Nationalities","ic":"🌎","dom":"social","lv":"A0"},"colors":{"name":"Colors & Clothes","ic":"👕","dom":"social","lv":"A0"},"clock":{"name":"What Time Is It?","ic":"⏰","dom":"social","lv":"A0"},"birthdays":{"name":"Days, Months & Birthdays","ic":"🎂","dom":"social","lv":"A0"},"myhome":{"name":"My Home","ic":"🏠","dom":"social","lv":"A0"},"looks":{"name":"What Do They Look Like?","ic":"🧑","dom":"social","lv":"A0"},"pets":{"name":"Pets","ic":"🐶","dom":"social","lv":"A0"},"cafe":{"name":"At the Café","ic":"☕","dom":"social","lv":"A0"},"abilities":{"name":"I Can Swim!","ic":"🏊","dom":"social","lv":"A0"},"classroom":{"name":"In the Classroom","ic":"✏️","dom":"work","lv":"A0"},"officethings":{"name":"Things at Work","ic":"🖇️","dom":"work","lv":"A0"},"phonecall0":{"name":"On the Phone","ic":"📞","dom":"work","lv":"A0"},"schedule0":{"name":"My Schedule","ic":"🗓️","dom":"work","lv":"A0"},"company0":{"name":"Where Do You Work?","ic":"🏢","dom":"work","lv":"A0"},"help0":{"name":"Can You Help Me?","ic":"🙋","dom":"work","lv":"A0"},"study0":{"name":"Learning English","ic":"📚","dom":"work","lv":"A0"},"directions0":{"name":"Where Is the Bank?","ic":"🗺️","dom":"debate","lv":"A0"},"supermarket":{"name":"At the Supermarket","ic":"🛒","dom":"debate","lv":"A0"},"transport0":{"name":"Bus, Train or Taxi?","ic":"🚌","dom":"debate","lv":"A0"},"holidays0":{"name":"Holidays & Celebrations","ic":"🎉","dom":"debate","lv":"A0"},"sports0":{"name":"Sports","ic":"⚽","dom":"debate","lv":"A0"},"hotel0":{"name":"At the Hotel","ic":"🏨","dom":"debate","lv":"A0"},"body":{"name":"My Body","ic":"🦵","dom":"debate","lv":"A0"},"parties":{"name":"Parties & Celebrations","ic":"🎉","dom":"social","lv":"A1"},"neighborhood":{"name":"My Neighborhood","ic":"🏘️","dom":"social","lv":"A1"},"personality":{"name":"What Are They Like?","ic":"😊","dom":"social","lv":"A1"},"lastweekend":{"name":"What Did You Do Last Weekend?","ic":"📸","dom":"social","lv":"A1"},"exercise":{"name":"Sports & Exercise","ic":"🏃","dom":"social","lv":"A1"},"movies1":{"name":"Movies & TV Shows","ic":"🎬","dom":"social","lv":"A1"},"cooking1":{"name":"Cooking at Home","ic":"🍳","dom":"social","lv":"A1"},"clothes1":{"name":"Shopping for Clothes","ic":"🛍️","dom":"social","lv":"A1"},"invitations":{"name":"Invitations","ic":"💌","dom":"social","lv":"A1"},"chores":{"name":"Housework & Chores","ic":"🧹","dom":"social","lv":"A1"},"famous1":{"name":"Famous People","ic":"⭐","dom":"social","lv":"A1"},"jobsearch1":{"name":"Looking for a Job","ic":"🔎","dom":"work","lv":"A1"},"calls1":{"name":"Phone Calls at Work","ic":"☎️","dom":"work","lv":"A1"},"office1":{"name":"Around the Office","ic":"🖥️","dom":"work","lv":"A1"},"messages1":{"name":"Leaving Messages","ic":"📝","dom":"work","lv":"A1"},"busy1":{"name":"A Busy Week","ic":"📆","dom":"work","lv":"A1"},"visitors1":{"name":"Welcoming Visitors","ic":"🤝","dom":"work","lv":"A1"},"skills1":{"name":"Skills & Abilities","ic":"🧰","dom":"work","lv":"A1"},"cities1":{"name":"Cities of the World","ic":"🌆","dom":"debate","lv":"A1"},"hotelbook1":{"name":"Booking a Hotel","ic":"🛎️","dom":"debate","lv":"A1"},"airport1":{"name":"At the Airport","ic":"🛫","dom":"debate","lv":"A1"},"gettingaround1":{"name":"Getting Around Town","ic":"🚇","dom":"debate","lv":"A1"},"festivals1":{"name":"Festivals Around the World","ic":"🎊","dom":"debate","lv":"A1"},"wildlife1":{"name":"Wild Animals","ic":"🦁","dom":"debate","lv":"A1"},"thenandnow1":{"name":"Life in the Past","ic":"🕰️","dom":"debate","lv":"A1"},"complaints2":{"name":"Making Complaints","ic":"😤","dom":"social","lv":"A2"},"style2":{"name":"Fashion & Style","ic":"👗","dom":"social","lv":"A2"},"homes2":{"name":"Houses & Apartments","ic":"🏡","dom":"social","lv":"A2"},"fans2":{"name":"Sports Fans","ic":"🏟️","dom":"social","lv":"A2"},"reading2":{"name":"Books & Reading","ic":"📖","dom":"social","lv":"A2"},"nightout2":{"name":"A Night Out","ic":"🌃","dom":"social","lv":"A2"},"childhood2":{"name":"Childhood Memories","ic":"🧸","dom":"social","lv":"A2"},"character2":{"name":"What Are You Like?","ic":"🧠","dom":"social","lv":"A2"},"animals2":{"name":"Pets & Their Owners","ic":"🐾","dom":"social","lv":"A2"},"gifts2":{"name":"Gifts & Special Occasions","ic":"🎁","dom":"social","lv":"A2"},"citycountry2":{"name":"City Life vs Country Life","ic":"🌄","dom":"social","lv":"A2"},"interview2":{"name":"My First Job Interview","ic":"🗂️","dom":"work","lv":"A2"},"wfh2":{"name":"Working from Home","ic":"🏠","dom":"work","lv":"A2"},"service2":{"name":"Customer Service","ic":"🛎️","dom":"work","lv":"A2"},"tasks2":{"name":"Who's Doing What?","ic":"✅","dom":"work","lv":"A2"},"biztrip2":{"name":"Business Trips","ic":"🧳","dom":"work","lv":"A2"},"courses2":{"name":"Courses & Studying","ic":"🎓","dom":"work","lv":"A2"},"rules2":{"name":"Rules at Work","ic":"👔","dom":"work","lv":"A2"},"extreme2":{"name":"Extreme Weather","ic":"🌪️","dom":"debate","lv":"A2"},"inventions2":{"name":"Great Inventions","ic":"💡","dom":"debate","lv":"A2"},"money2":{"name":"Money & Saving","ic":"💰","dom":"debate","lv":"A2"},"transport2":{"name":"Transportation","ic":"🚲","dom":"debate","lv":"A2"},"volunteer2":{"name":"Volunteering","ic":"🙌","dom":"debate","lv":"A2"},"customs2":{"name":"Traditions & Customs","ic":"🎎","dom":"debate","lv":"A2"},"safety2":{"name":"Staying Safe","ic":"🦺","dom":"debate","lv":"A2"},"series3":{"name":"Movies & Series","ic":"📺","dom":"social","lv":"B1"},"fitness3":{"name":"Sports & Fitness","ic":"💪","dom":"social","lv":"B1"},"shopping3":{"name":"Shopping Habits","ic":"🛒","dom":"social","lv":"B1"},"home3":{"name":"Home Sweet Home","ic":"🛋️","dom":"social","lv":"B1"},"festivals3":{"name":"Celebrations & Festivals","ic":"🎆","dom":"social","lv":"B1"},"stories3":{"name":"Books & Stories","ic":"📚","dom":"social","lv":"B1"},"animals3":{"name":"Animals in Our Lives","ic":"🐕","dom":"social","lv":"B1"},"city3":{"name":"City Life","ic":"🏙️","dom":"social","lv":"B1"},"fashion3":{"name":"Clothes & Fashion","ic":"🧥","dom":"social","lv":"B1"},"changes3":{"name":"Life Changes","ic":"🔄","dom":"social","lv":"B1"},"kitchen3":{"name":"Recipes & Kitchen Disasters","ic":"🍝","dom":"social","lv":"B1"},"customers3":{"name":"Dealing with Customers","ic":"🧑‍💼","dom":"work","lv":"B1"},"calls3":{"name":"Phone & Video Calls","ic":"💻","dom":"work","lv":"B1"},"remote3":{"name":"Working Remotely","ic":"🏡","dom":"work","lv":"B1"},"deadlines3":{"name":"Deadlines & Schedules","ic":"⏳","dom":"work","lv":"B1"},"biztravel3":{"name":"Business Travel","ic":"🧳","dom":"work","lv":"B1"},"skills3":{"name":"Learning New Skills","ic":"🧠","dom":"work","lv":"B1"},"smallbiz3":{"name":"Starting a Small Business","ic":"🏪","dom":"work","lv":"B1"},"money3":{"name":"Money & Spending","ic":"💳","dom":"debate","lv":"B1"},"inventions3":{"name":"Inventions That Changed Our Lives","ic":"⚙️","dom":"debate","lv":"B1"},"traffic3":{"name":"Transportation & Traffic","ic":"🚦","dom":"debate","lv":"B1"},"wildlife3":{"name":"Nature & Wildlife","ic":"🌿","dom":"debate","lv":"B1"},"school3":{"name":"School & Education","ic":"🏫","dom":"debate","lv":"B1"},"volunteer3":{"name":"Helping Others","ic":"🤲","dom":"debate","lv":"B1"},"cultureshock3":{"name":"Culture Shock","ic":"🧭","dom":"debate","lv":"B1"},"abroad4":{"name":"Living Abroad","ic":"🌍","dom":"social","lv":"B2"},"fame4":{"name":"Fame & Celebrity","ic":"📸","dom":"social","lv":"B2"},"competition4":{"name":"Sports & Competition","ic":"🏆","dom":"social","lv":"B2"},"art4":{"name":"Art & Creativity","ic":"🎨","dom":"social","lv":"B2"},"gaming4":{"name":"Video Games","ic":"🎮","dom":"social","lv":"B2"},"generations4":{"name":"Generation Gaps","ic":"👵","dom":"social","lv":"B2"},"willpower4":{"name":"Habits & Willpower","ic":"🎯","dom":"social","lv":"B2"},"luck4":{"name":"Luck & Superstitions","ic":"🍀","dom":"social","lv":"B2"},"housing4":{"name":"Housing & Neighborhoods","ic":"🏘️","dom":"social","lv":"B2"},"consumer4":{"name":"Consumer Habits","ic":"🛍️","dom":"social","lv":"B2"},"languages4":{"name":"Learning Languages","ic":"🗣️","dom":"social","lv":"B2"},"complaints4":{"name":"Handling Complaints","ic":"📞","dom":"work","lv":"B2"},"leadership4":{"name":"Leadership Styles","ic":"🧭","dom":"work","lv":"B2"},"feedback4":{"name":"Giving & Receiving Feedback","ic":"💬","dom":"work","lv":"B2"},"networking4":{"name":"Networking","ic":"🤝","dom":"work","lv":"B2"},"time4":{"name":"Time Management","ic":"⏱️","dom":"work","lv":"B2"},"startups4":{"name":"Startups & Entrepreneurs","ic":"🚀","dom":"work","lv":"B2"},"hybrid4":{"name":"Remote & Hybrid Work","ic":"🏢","dom":"work","lv":"B2"},"crime4":{"name":"Crime & Safety","ic":"🚓","dom":"debate","lv":"B2"},"education4":{"name":"Education Today","ic":"🎓","dom":"debate","lv":"B2"},"space4":{"name":"Space Exploration","ic":"🪐","dom":"debate","lv":"B2"},"ads4":{"name":"Advertising & Marketing","ic":"📢","dom":"debate","lv":"B2"},"cashless4":{"name":"Money in a Cashless World","ic":"💳","dom":"debate","lv":"B2"},"science4":{"name":"Science in Everyday Life","ic":"🔬","dom":"debate","lv":"B2"},"conservation4":{"name":"Animals & Conservation","ic":"🐘","dom":"debate","lv":"B2"},"happiness5":{"name":"Happiness & Success","ic":"😊","dom":"social","lv":"C1"},"architecture5":{"name":"Architecture & Design","ic":"🏛️","dom":"social","lv":"C1"},"risk5":{"name":"Risk & Adventure","ic":"🧗","dom":"social","lv":"C1"},"minimalism5":{"name":"Minimalism & Consumerism","ic":"📦","dom":"social","lv":"C1"},"nostalgia5":{"name":"Memory & Nostalgia","ic":"📼","dom":"social","lv":"C1"},"talent5":{"name":"Intelligence & Talent","ic":"🧠","dom":"social","lv":"C1"},"fairplay5":{"name":"Sport, Money & Fair Play","ic":"🥇","dom":"social","lv":"C1"},"artworld5":{"name":"The Art World","ic":"🖼️","dom":"social","lv":"C1"},"langculture5":{"name":"Language & Culture","ic":"🗣️","dom":"social","lv":"C1"},"aging5":{"name":"An Aging Society","ic":"👴","dom":"social","lv":"C1"},"etiquette5":{"name":"Etiquette & Social Rules","ic":"🍷","dom":"social","lv":"C1"},"corpculture5":{"name":"Corporate Culture","ic":"🏢","dom":"work","lv":"C1"},"crisis5":{"name":"Crisis Management","ic":"🚨","dom":"work","lv":"C1"},"bizethics5":{"name":"Ethics in Business","ic":"⚖️","dom":"work","lv":"C1"},"innovation5":{"name":"Innovation & Disruption","ic":"💡","dom":"work","lv":"C1"},"mentoring5":{"name":"Mentoring & Coaching","ic":"🧑‍🏫","dom":"work","lv":"C1"},"gig5":{"name":"The Gig Economy","ic":"🛵","dom":"work","lv":"C1"},"crosscultural5":{"name":"Cross-cultural Communication","ic":"🌐","dom":"work","lv":"C1"},"privacy5":{"name":"Privacy & Surveillance","ic":"🔐","dom":"debate","lv":"C1"},"genetics5":{"name":"Genetic Engineering","ic":"🧬","dom":"debate","lv":"C1"},"globalization5":{"name":"Globalization","ic":"🌍","dom":"debate","lv":"C1"},"resources5":{"name":"Water, Energy & Resources","ic":"💧","dom":"debate","lv":"C1"},"edreform5":{"name":"Rethinking Education","ic":"📐","dom":"debate","lv":"C1"},"spacefuture5":{"name":"Space & Humanity's Future","ic":"🚀","dom":"debate","lv":"C1"},"money5":{"name":"The Future of Money","ic":"🪙","dom":"debate","lv":"C1"},"language6":{"name":"Language, Thought & Culture","ic":"💭","dom":"social","lv":"C2"},"freewill6":{"name":"Free Will & Choice","ic":"🎲","dom":"social","lv":"C2"},"aesthetics6":{"name":"Beauty & Aesthetics","ic":"🌸","dom":"social","lv":"C2"},"naturenurture6":{"name":"Nature vs Nurture","ic":"🧬","dom":"social","lv":"C2"},"rituals6":{"name":"Rituals & Meaning","ic":"🕯️","dom":"social","lv":"C2"},"authenticity6":{"name":"Art, Value & Authenticity","ic":"🖼️","dom":"social","lv":"C2"},"solitude6":{"name":"Solitude & Connection","ic":"🌌","dom":"social","lv":"C2"},"ambition6":{"name":"Ambition & Contentment","ic":"⛰️","dom":"social","lv":"C2"},"memory6":{"name":"Collective Memory","ic":"🏛️","dom":"social","lv":"C2"},"literature6":{"name":"Books That Shape Us","ic":"📜","dom":"social","lv":"C2"},"identity6":{"name":"Identity in a Digital Age","ic":"🪞","dom":"social","lv":"C2"},"strategy6":{"name":"Strategic Thinking","ic":"♟️","dom":"work","lv":"C2"},"change6":{"name":"Leading Change","ic":"🔄","dom":"work","lv":"C2"},"diplomacy6":{"name":"Diplomacy & Tact","ic":"🕊️","dom":"work","lv":"C2"},"csr6":{"name":"Corporate Responsibility","ic":"🌱","dom":"work","lv":"C2"},"uncertainty6":{"name":"Decisions Under Uncertainty","ic":"🎯","dom":"work","lv":"C2"},"influence6":{"name":"Influence Without Authority","ic":"🧲","dom":"work","lv":"C2"},"futureorgs6":{"name":"The Future of Organizations","ic":"🏗️","dom":"work","lv":"C2"},"bioethics6":{"name":"Bioethics","ic":"⚕️","dom":"debate","lv":"C2"},"urban6":{"name":"Urban Futures","ic":"🌆","dom":"debate","lv":"C2"},"softpower6":{"name":"Culture & Soft Power","ic":"🌐","dom":"debate","lv":"C2"},"aiart6":{"name":"AI & Human Creativity","ic":"🤖","dom":"debate","lv":"C2"},"trust6":{"name":"Science & Public Trust","ic":"🔬","dom":"debate","lv":"C2"},"globalhealth6":{"name":"Global Health Challenges","ic":"🩺","dom":"debate","lv":"C2"},"ubi6":{"name":"Work, Wealth & Basic Income","ic":"💼","dom":"debate","lv":"C2"}};
@@ -588,6 +742,13 @@ var WSTAT = {"lessons":315,"expr":3780,"per":{"A0":45,"A1":45,"A2":45,"B1":45,"B
 var WLV = {"A0":{"desc":"Your first English at work: greetings, departments, numbers and emails, short messages, signs and simple requests — with Spanish support.","can":"Introduce yourself at work, give your contact details, understand signs and use simple phrases with colleagues and visitors.","img":8101767},"A1":{"desc":"Everyday work English: colleagues, departments, routines, simple emails, online meetings, orders and short presentations — with Spanish support.","can":"Talk about your job, department and routine, write short messages, ask for permission and handle simple calls and meetings.","img":5961027},"A2":{"desc":"Work experience, clear emails, status updates, problems, travel arrangements, simple decisions and charts.","can":"Describe your career and projects, give updates, explain problems, make arrangements and take part in simple meetings.","img":7792868},"B1":{"desc":"Meetings, calls, procedures, progress reports, client relationships and presenting results with confidence.","can":"Share ideas in meetings, report what people said, explain processes, present results and deal with clients and suppliers.","img":5990160},"B2":{"desc":"Professional communication: difficult emails, stakeholders, retrospectives, proposals, policies and forecasts.","can":"Communicate fluently and diplomatically at work, discuss proposals and data, and lead discussions on workplace issues.","img":12903034},"C1":{"desc":"Leadership-level English: accountability, dissent, escalation, data storytelling and presenting to senior management.","can":"Influence decisions, handle complex and sensitive conversations, and present precisely to senior audiences.","img":7644016},"C2":{"desc":"Near-native workplace English: presence, subtext, power, strategy, ethics and the big questions about work.","can":"Navigate any professional situation with nuance, irony and tact, and debate the future of work at the highest level.","img":7433849}};
 var WHERO = 39204849, WBAND = 7964350;
 var WORK_V = "732a2ea0f8";
+
+/* Idioms + Pronunciation Lab (the data are in idioms.js and pron.js) */
+var ITHEMES = {"body":{"ic":"🫀","name":"Body"},"animals":{"ic":"🐾","name":"Animals"},"food":{"ic":"🍰","name":"Food & drink"},"colors":{"ic":"🎨","name":"Colors"},"weather":{"ic":"🌦️","name":"Weather & nature"},"money":{"ic":"💰","name":"Money & business"},"time":{"ic":"⏰","name":"Time"},"feelings":{"ic":"😊","name":"Feelings & moods"},"people":{"ic":"🤝","name":"People & relationships"},"success":{"ic":"🏆","name":"Success & failure"},"talk":{"ic":"💬","name":"Talking & communication"},"trouble":{"ic":"🧩","name":"Problems & difficulties"},"risk":{"ic":"🎲","name":"Decisions & risk"},"sport":{"ic":"⚽","name":"Sports & games"},"travel":{"ic":"🧭","name":"Travel & movement"}};
+var PFOCUS = {"sounds":{"ic":"🔤","name":"Sounds"},"stress":{"ic":"🎯","name":"Word stress"},"rhythm":{"ic":"🥁","name":"Sentence stress & rhythm"},"weak":{"ic":"🪶","name":"Weak forms & contractions"},"linking":{"ic":"🔗","name":"Linking"},"reduction":{"ic":"⚡","name":"Connected speech"},"intonation":{"ic":"🎵","name":"Intonation"}};
+var ISTAT = {"n":1115,"nNew":400,"nLes":715,"per":{"A2":112,"B1":280,"B2":284,"C1":239,"C2":200},"th":{"animals":66,"food":66,"success":89,"people":95,"body":121,"money":83,"time":67,"feelings":60,"travel":59,"weather":51,"risk":80,"colors":38,"sport":51,"trouble":79,"talk":110}};
+var PSTAT = {"units":63,"ready":63};
+var IDM_V = "4361f37018", PRN_V = "7e47788703";
 </script>
 <script>
 /* =====================================================================
@@ -777,9 +938,12 @@ function route(){
   cleanup();
   var h = location.hash.replace(/^#/, "") || "home", p = h.split("/");
   if(isWorkRoute(p) && !WORK.ready){ setNav("work"); workLoading(); needWork(route); window.scrollTo(0, 0); return; }
+  var xk = xRoute(p); if(xk && p[1] && !XD[xk].ready){ setNav(xk); xLoading(xk); needX(xk, route); window.scrollTo(0, 0); return; }
   if(LEVELS[p[0]]){ setNav(p[0]); renderLevel(p[0], p[1]); }
   else if(p[0] === "work"){ setNav("work"); if(LEVELS[p[1]]) renderLevel(p[1], p[2], true); else renderWorkHome(); }
   else if(p[0] === "lesson" && lesson(p[1])){ var L = lesson(p[1]); setNav(isWork(L) ? "work" : L.lv); renderLesson(L); }
+  else if(p[0] === "idioms"){ setNav("idioms"); if(p[1] === "practice") renderIdPractice(); else renderIdioms(p[1]); }
+  else if(p[0] === "pron"){ setNav("pron"); if(LEVELS[p[1]]) renderPronLevel(p[1]); else if(pUnit(p[1])) renderPronUnit(p[1]); else renderPronHome(); }
   else if(p[0] === "bank"){ setNav("bank"); renderBank(p[1] === "func" ? "func" : "expr"); }
   else if(p[0] === "exam"){ setNav("exam"); if(p[1] === "ielts") renderIelts(p[2]); else if(p[1] === "toefl") renderToefl(p[2]); else renderExam(); }
   else { setNav("home"); renderHome(); }
@@ -814,6 +978,8 @@ function renderHome(){
       return '<div><span class="m">' + s[2] + '</span><div class="ic">' + s[0] + '</div><b>' + s[1] + '</b><span>' + s[3] + '</span></div>'; }).join("") + '</div></section>';
   h += '<section class="sec ctas"><div class="cta exam"><div><h3>🎓 Exam Zone</h3><p>IELTS Speaking (Parts 1–3) and the new TOEFL iBT Speaking: real timings, recording and model answers.</p></div><button class="btn or" onclick="go(\'exam\')">Open →</button></div>' +
     '<div class="cta bank"><div><h3>📚 Language Bank</h3><p>All ' + (nExpr + WSTAT.expr).toLocaleString("en-US") + ' expressions and every conversation strategy in one searchable place.</p></div><button class="btn gr" onclick="go(\'bank\')">Open →</button></div></section>';
+  h += '<section class="sec ctas"><div class="cta idm"><div><h3>🗝️ Idioms</h3><p>' + ISTAT.n.toLocaleString("en-US") + ' idioms by theme and level, with audio, examples and Spanish equivalents — and games to practice them.</p></div><button class="btn idm" onclick="go(\'idioms\')">Open →</button></div>' +
+    '<div class="cta prn"><div><h3>🗣️ Pronunciation Lab</h3><p>' + PSTAT.units + ' units from A0 to C2: sounds, stress, rhythm, linking and connected speech — listen, mark and write what you hear.</p></div><button class="btn prn" onclick="go(\'pron\')">Open →</button></div></section>';
   $("app").innerHTML = h;
 }
 
@@ -864,6 +1030,7 @@ function renderBank(tab){
     (tab === "expr" ? '<select id="bt" onchange="bankDraw()"></select>' +
       '<select id="by" onchange="bankDraw()"><option value="">All types</option>' + Object.keys(TYPES).map(function(k){ return '<option value="' + k + '">' + TYPES[k] + '</option>'; }).join("") + '</select>' : "") +
     '</div><div class="bcount" id="bc"></div><div class="' + (tab === "expr" ? "bgrid" : "fgrid") + '" id="bg"></div>';
+  h = h.replace('<div class="filters">', '<div class="xhint">🗝️ Idioms by theme, with games? <button onclick="go(\'idioms\')">Open the Idioms section →</button></div><div class="filters">');
   $("app").innerHTML = h; BANKTAB = tab; bankTopics(); bankDraw();
   if(!WORK.ready) needWork(function(){ if($("bg") && $("bl")){ bankTopics(); bankDraw(); } });
 }
@@ -1487,6 +1654,270 @@ function renderWorkHome(){
     '<div class="cta exam"><div><h3>☕ Conversation Club</h3><p>' + LESSONS.length + ' more lessons about everyday life, travel, culture, humor and current affairs.</p></div><button class="btn or" onclick="go(\'home\')">Open →</button></div></section>';
   $("app").innerHTML = h;
   needWork();
+}
+
+/* =====================================================================
+   IDIOMS (idiom bank + games) · PRONUNCIATION LAB (7 levels × 9 units)
+   The data live in idioms.js and pron.js and load the first time they are needed.
+   ===================================================================== */
+var XD = {
+  idioms: {ready: false, loading: false, cbs: [], file: "idioms.js", v: IDM_V, what: "the idioms", get: function(){ IDIOMS = window.IDIOMS || []; }},
+  pron:   {ready: false, loading: false, cbs: [], file: "pron.js", v: PRN_V, what: "the Pronunciation Lab", get: function(){ PRON = window.PRON || []; }}
+};
+var IDIOMS = [], PRON = [];
+function needX(k, cb){
+  var X = XD[k];
+  if(X.ready){ if(cb) cb(); return; }
+  if(cb && X.cbs.indexOf(cb) < 0) X.cbs.push(cb);
+  if(X.loading) return;
+  X.loading = true;
+  var s = document.createElement("script"); s.src = X.file + "?v=" + X.v;
+  s.onload = function(){ X.get(); X.ready = true; var c = X.cbs; X.cbs = []; c.forEach(function(f){ f(); }); };
+  s.onerror = function(){ X.loading = false; X.cbs = []; s.parentNode.removeChild(s);
+    var a = $("app"); if(a && a.querySelector(".wload")) a.innerHTML = '<div class="notice" style="margin-top:20px">📶 ' + X.what + ' could not be loaded. Check your connection and <a href="javascript:location.reload()">try again</a>.</div>'; };
+  document.head.appendChild(s);
+}
+function xLoading(k){ $("app").innerHTML = '<div class="wload"><span class="spin2 x' + k + '"></span>Loading ' + XD[k].what + '…</div>'; }
+function xRoute(p){ return p[0] === "idioms" ? "idioms" : p[0] === "pron" ? "pron" : ""; }
+function markX(x){ return esc(x).replace(/\[\[(.+?)\]\]/g, "<mark>$1</mark>"); }
+function plainX(x){ return String(x).replace(/\[\[|\]\]/g, ""); }
+function sayClean(t){ return String(t).replace(/\bsomeone's\b/g, "someone's").replace(/\bsb\b/g, "somebody").replace(/\bsth\b/g, "something"); }
+
+/* ---------------------------------------------------------------- IDIOMS */
+var IDF = {q: "", lv: "", th: "", src: "", n: 60};
+var IDES = false; try{ IDES = localStorage.getItem("tw_cc_ides") === "on"; }catch(e){}
+function idTheme(k){ return ITHEMES[k] || {ic: "🗝️", name: "Other"}; }
+function renderIdioms(th){
+  if(th && ITHEMES[th]) IDF.th = th;
+  var h = '<button class="back" onclick="go(\'home\')">← Home</button>' +
+    '<section class="xhero idm"><div><div class="eyebrow">🗝️ Idioms · A2 → C2</div><h1>Idioms that <em>real people</em> use.</h1>' +
+    '<p class="lead">' + ISTAT.n.toLocaleString("en-US") + ' idioms by theme and level, each with its meaning, an example, audio and a Spanish equivalent — ' + ISTAT.nNew + ' in this bank, plus ' + ISTAT.nLes + ' from the Club lessons, with a link to the lesson where they appear. Then play with them: match, complete, guess the meaning and flashcards.</p>' +
+    '<div class="row" style="margin-top:18px"><button class="btn idm" onclick="go(\'idioms/practice\')">🎲 Practice idioms</button><button class="btn soft" onclick="go(\'bank\')">📚 Language Bank</button></div></div>' +
+    '<div class="xstats">' + ["A2", "B1", "B2", "C1", "C2"].map(function(k){ return '<button style="--c:' + LEVELS[k].c + '" onclick="idSet(\'lv\',\'' + k + '\')"><b>' + (ISTAT.per[k] || 0) + '</b><span>' + k + ' · ' + LEVELS[k].name + '</span></button>'; }).join("") + '</div></section>';
+  h += '<div class="thgrid">' + [["", "🗝️", "All themes", ISTAT.n]].concat(Object.keys(ITHEMES).map(function(k){ return [k, ITHEMES[k].ic, ITHEMES[k].name, ISTAT.th[k] || 0]; })).map(function(t){
+    return '<button class="thc' + (IDF.th === t[0] ? " on" : "") + '" data-th="' + t[0] + '" onclick="idSet(\'th\',\'' + t[0] + '\')"><span class="ic">' + t[1] + '</span><b>' + t[2] + '</b><small>' + t[3] + '</small></button>'; }).join("") + '</div>';
+  h += '<div class="filters"><input id="iq" placeholder="Search an idiom, a meaning or a Spanish word…" value="' + esc(IDF.q) + '" oninput="IDF.q=this.value;IDF.n=60;idDraw()">' +
+    '<select id="il" onchange="IDF.lv=this.value;IDF.n=60;idDraw()"><option value="">All levels</option>' + ["A2", "B1", "B2", "C1", "C2"].map(function(k){ return '<option value="' + k + '"' + (IDF.lv === k ? " selected" : "") + '>' + k + ' · ' + LEVELS[k].name + '</option>'; }).join("") + '</select>' +
+    '<select id="is" onchange="IDF.src=this.value;IDF.n=60;idDraw()"><option value="">All idioms</option><option value="new"' + (IDF.src === "new" ? " selected" : "") + '>🆕 Idiom bank</option><option value="les"' + (IDF.src === "les" ? " selected" : "") + '>📘 From the lessons</option></select>' +
+    '<button id="idesb" class="esbtn' + (IDES ? " on" : "") + '" onclick="idEs()" title="Mostrar / ocultar equivalentes en español">🇪🇸 Español</button></div>' +
+    '<div class="bcount"><span id="ic"></span><button class="btn sm idm" onclick="go(\'idioms/practice\')">🎲 Practice these</button></div><div class="bgrid' + (IDES ? "" : " noes") + '" id="ig"></div><div id="imore"></div>';
+  $("app").innerHTML = h; idDraw(); needX("idioms");
+}
+function idSet(k, v){ IDF[k] = IDF[k] === v && k === "th" ? "" : v; IDF.n = 60; if(k === "lv" && $("il")) $("il").value = v;
+  document.querySelectorAll(".thc").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-th") === IDF.th); }); idDraw(); var g = $("iq"); if(g) g.scrollIntoView({behavior: "smooth", block: "center"}); }
+function idEs(){ IDES = !IDES; try{ localStorage.setItem("tw_cc_ides", IDES ? "on" : "off"); }catch(e){} var g = $("ig"); if(g) g.classList.toggle("noes", !IDES); var b = $("idesb"); if(b) b.classList.toggle("on", IDES); }
+function idPool(f){
+  f = f || IDF; var q = low(f.q || "");
+  return IDIOMS.filter(function(o){ if(f.lv && o.lv !== f.lv) return false; if(f.th && o.th !== f.th) return false; if(f.src === "new" && !o.nw) return false; if(f.src === "les" && o.nw) return false;
+    return !q || low(o.e + " " + o.d + " " + plainX(o.x) + " " + (o.es || "")).indexOf(q) >= 0; });
+}
+function idCard(o){
+  var T = idTheme(o.th), k = "i" + (SAYN++); SAYMAP[k] = {e: sayClean(o.e)};
+  return '<div class="ex idc' + (o.lv === "A2" ? " a2" : "") + '"><div class="ty"><span class="lvtag" style="--c:' + LEVELS[o.lv].c + '">' + o.lv + '</span> ' + T.ic + ' ' + esc(T.name) + (o.nw ? "" : ' · 📘 lesson') + (o.reg ? ' · ' + esc(o.reg) : "") + '</div>' +
+    '<div class="e">' + esc(o.e) + '</div><button class="say" title="Listen" onclick="sayK(\'' + k + '\',this)">🔊</button>' +
+    '<div class="d">' + esc(o.d) + '</div>' + (o.es ? '<div class="esd es">🇪🇸 ' + esc(o.es) + '</div>' : "") +
+    '<div class="x">' + markX(o.x) + ' <button class="xsay" title="Listen to the example" onclick="say(this.dataset.t,{btn:this})" data-t="' + esc(plainX(o.x)) + '">🔊</button></div>' +
+    (o.o ? '<div class="nt">💡 ' + esc(o.o) + '</div>' : "") + (o.uk ? '<div class="uk">🇬🇧 ' + esc(o.uk) + '</div>' : "") +
+    (o.src && o.src.length ? '<div class="src">' + o.src.slice(0, 3).map(function(id){ var L = lesson(id); return L ? '<button onclick="go(\'lesson/' + id + '\')">' + (isWork(L) ? "💼 " : "") + L.lv + ' · ' + esc(L.title) + ' →</button>' : ""; }).join("") + (o.src.length > 3 ? '<span class="more">+' + (o.src.length - 3) + '</span>' : "") + '</div>' : "") + '</div>';
+}
+function idDraw(){
+  if(!$("ig")) return;
+  if(!XD.idioms.ready){ $("ic").textContent = "Loading the idioms…"; $("ig").innerHTML = '<div class="wload" style="grid-column:1/-1;padding:40px 0"><span class="spin2 xidioms"></span>Loading…</div>'; needX("idioms", idDraw); return; }
+  if(!WORK.ready) needWork(function(){ if($("ig")) idDraw(); });
+  SAYMAP = {}; SAYN = 0;
+  var out = idPool().sort(function(a, b){ return LV_KEYS.indexOf(a.lv) - LV_KEYS.indexOf(b.lv) || a.e.localeCompare(b.e); });
+  $("ic").textContent = out.length + " idiom" + (out.length === 1 ? "" : "s") + (IDF.th ? " · " + idTheme(IDF.th).name : "") + (IDF.lv ? " · " + IDF.lv : "");
+  $("ig").innerHTML = out.length ? out.slice(0, IDF.n).map(idCard).join("") : '<div class="empty" style="grid-column:1/-1">No idioms found. Try another word or theme.</div>';
+  $("imore").innerHTML = out.length > IDF.n ? '<div style="text-align:center;margin-top:18px"><button class="btn soft" onclick="IDF.n+=60;idDraw()">Show more · ' + (out.length - IDF.n) + ' left</button></div>' : "";
+  emojify();
+}
+
+/* --- idiom games: match · complete · meaning · flashcards --- */
+var IG = {mode: "match", set: [], i: 0, ok: 0, done: 0, pick: null, flip: false};
+function idGamePool(){
+  // sentence games need the idiom marked in its example
+  var ok = function(o){ return IG.mode === "match" || IG.mode === "cards" || /\[\[.+?\]\]/.test(o.x); };
+  var p = idPool().filter(ok), note = "";
+  if(p.length < 8){ p = idPool({lv: IDF.lv, th: "", src: "", q: ""}).filter(ok); note = "Not enough idioms with those filters: practicing all " + (IDF.lv || "") + " idioms."; }
+  if(p.length < 8){ p = IDIOMS.filter(ok); note = "Practicing idioms from every level."; }
+  return {p: p, note: note};
+}
+function renderIdPractice(mode){
+  if(mode) IG.mode = mode;
+  var M = [["match", "🧩 Match"], ["complete", "✍️ Complete"], ["meaning", "🤔 What does it mean?"], ["cards", "🃏 Flashcards"]];
+  var sel = (IDF.lv ? IDF.lv + " · " : "") + (IDF.th ? idTheme(IDF.th).ic + " " + idTheme(IDF.th).name : "All themes") + (IDF.src === "new" ? " · bank" : IDF.src === "les" ? " · lessons" : "") + (IDF.q ? " · “" + esc(IDF.q) + "”" : "");
+  var h = '<button class="back" onclick="go(\'idioms\')">← 🗝️ Idioms</button><div class="sec-h" style="margin-bottom:0"><div><div class="eyebrow" style="color:var(--idm)">🗝️ Idioms · practice</div><h1 style="font-size:34px;margin-top:6px">Play with idioms</h1><p>Practicing: <b>' + sel + '</b> · <a href="#idioms">change the filters</a></p></div></div>' +
+    '<div class="etabs">' + M.map(function(m){ return '<button class="' + (IG.mode === m[0] ? "on" : "") + '" onclick="renderIdPractice(\'' + m[0] + '\')">' + m[1] + '</button>'; }).join("") + '</div><div id="igame"></div>';
+  $("app").innerHTML = h; idNewRound();
+}
+function idNewRound(){
+  var G = idGamePool(), n = IG.mode === "match" ? 6 : IG.mode === "cards" ? 12 : 8;
+  // copies, so each round starts clean
+  IG.set = shuffle(G.p).slice(0, n).map(function(o){ return Object.assign({}, o); }); IG.pool = G.p; IG.i = 0; IG.ok = 0; IG.done = 0; IG.pick = null; IG.flip = false; IG.note = G.note;
+  if(IG.mode === "match") IG.right = shuffle(IG.set.map(function(o, i){ return i; }));
+  idGameDraw();
+}
+function idOpts(o, field){
+  var others = shuffle(IG.pool.filter(function(x){ return x.e !== o.e && x[field] !== o[field]; })).slice(0, 2);
+  return shuffle([o].concat(others));
+}
+function idGameDraw(){
+  var g = $("igame"); if(!g) return;
+  var h = IG.note ? '<p class="notice" style="margin:12px 0">' + esc(IG.note) + '</p>' : "";
+  if(IG.mode === "match"){
+    h += '<p class="ghint">Tap an idiom, then its meaning. <b id="igsc">' + IG.ok + ' / ' + IG.set.length + '</b></p><div class="imatch"><div>' +
+      IG.set.map(function(o, i){ return '<button class="im-l' + (o._m ? " ok" : "") + (IG.pick === i ? " sel" : "") + '" onclick="idMatchL(' + i + ')">' + esc(o.e) + '</button>'; }).join("") + '</div><div>' +
+      IG.right.map(function(i){ var o = IG.set[i]; return '<button class="im-r' + (o._m ? " ok" : "") + '" id="imr' + i + '" onclick="idMatchR(' + i + ')">' + esc(o.d) + '</button>'; }).join("") + '</div></div>';
+    if(IG.ok === IG.set.length) h += idEnd();
+  } else if(IG.mode === "cards"){
+    var o = IG.set[IG.i];
+    h += '<p class="ghint">Card ' + (IG.i + 1) + ' / ' + IG.set.length + ' · tap the card to turn it over.</p><div class="icard' + (IG.flip ? " flip" : "") + '" onclick="IG.flip=!IG.flip;idGameDraw()"><div class="f">' +
+      (IG.flip ? '<b>' + esc(o.e) + '</b><p>' + esc(o.d) + '</p><p class="x">' + markX(o.x) + '</p>' + (o.es ? '<p class="es2">🇪🇸 ' + esc(o.es) + '</p>' : "")
+               : '<span class="lvtag" style="--c:' + LEVELS[o.lv].c + '">' + o.lv + '</span><b>' + esc(o.e) + '</b><small>What does it mean? Tap to see.</small>') + '</div></div>' +
+      '<div class="row" style="justify-content:center;margin-top:14px"><button class="btn soft" onclick="say(IG.set[IG.i].e)">🔊 Listen</button>' +
+      (IG.i > 0 ? '<button class="btn soft" onclick="IG.i--;IG.flip=false;idGameDraw()">← Back</button>' : "") +
+      (IG.i < IG.set.length - 1 ? '<button class="btn idm" onclick="IG.i++;IG.flip=false;idGameDraw()">Next →</button>' : '<button class="btn idm" onclick="idNewRound()">↺ New cards</button>') + '</div>';
+  } else {
+    if(IG.i >= IG.set.length){ g.innerHTML = h + idEnd(); emojify(); return; }
+    var q = IG.set[IG.i], C = IG.mode === "complete";
+    if(!q._o) q._o = idOpts(q, C ? "e" : "d");
+    var sent = C ? esc(q.x).replace(/\[\[(.+?)\]\]/, '<span class="gap">' + (q._a !== undefined ? esc(q.x.match(/\[\[(.+?)\]\]/)[1]) : "_____") + '</span>') : markX(q.x);
+    h += '<p class="ghint">' + (IG.i + 1) + ' / ' + IG.set.length + ' · ' + (C ? "Which idiom completes the sentence?" : "What does the idiom mean here?") + ' <b>' + IG.ok + ' ✓</b></p>' +
+      '<div class="iq"><p class="s">' + sent + '</p><div class="qo' + (q._a !== undefined ? " lock" : "") + '">' + q._o.map(function(o, k){
+        var cls = q._a === undefined ? "" : (o === q ? " ok" : (q._a === k ? " no" : ""));
+        return '<button class="' + cls + '" onclick="idAns(' + k + ')">' + esc(C ? o.e : o.d) + '</button>'; }).join("") + '</div>' +
+      (q._a !== undefined ? '<div class="fb">' + (q._o[q._a] === q ? "✅ Right!" : "❌ It's “" + esc(q.e) + "”.") + ' <b>' + esc(q.e) + '</b> = ' + esc(q.d) + (q.es && IDES ? ' · 🇪🇸 ' + esc(q.es) : "") + '</div><button class="btn idm" onclick="IG.i++;idGameDraw()">' + (IG.i < IG.set.length - 1 ? "Next →" : "See my score") + '</button>' : "") + '</div>';
+  }
+  g.innerHTML = h; emojify();
+}
+function idAns(k){ var q = IG.set[IG.i]; if(q._a !== undefined) return; q._a = k; if(q._o[k] === q){ IG.ok++; chime(); } say(plainX(q.x)); idGameDraw(); }
+function idMatchL(i){ if(IG.set[i]._m) return; IG.pick = i; idGameDraw(); }
+function idMatchR(i){
+  if(IG.pick === null || IG.set[i]._m) return;
+  if(IG.pick === i){ IG.set[i]._m = true; IG.ok++; chime(); IG.pick = null; idGameDraw(); }
+  else { var b = $("imr" + i); if(b){ b.classList.add("no"); setTimeout(function(){ b.classList.remove("no"); }, 600); } }
+}
+function idEnd(){
+  var n = IG.set.length, r = IG.ok / n;
+  return '<div class="iend"><b>' + IG.ok + ' / ' + n + '</b><span>' + (r === 1 ? "Perfect! 🏆" : r >= .7 ? "Great job! 🔥" : "Good effort — try another round. 💪") + '</span><button class="btn idm" onclick="idNewRound()">↺ New round</button></div>';
+}
+
+/* ---------------------------------------------------------- PRONUNCIATION */
+var PLVD = {
+  A0: "First sounds: letter names, numbers, short and long vowels, b/v, final consonants, s + consonant, th, word stress and question intonation — with Spanish support.",
+  A1: "-s and -ed endings, the three a’s, h vs j, contractions, weak and/or/of, two-syllable stress, linking and the rhythm of stressed words — with Spanish support.",
+  A2: "Weak forms, the schwa, gonna / wanna, did you → didja, suffix stress, consonant groups, lists and choices, and sounding polite — with Spanish support.",
+  B1: "Linking vowels, disappearing t and d, the American flap T, weak auxiliaries, more contractions, compounds, thought groups, contrastive stress and question tags.",
+  B2: "Assimilation, the stopped T, kinda / sorta / lotta, word families, stress-timing, attitude through intonation, noun–verb pairs and decoding fast conversation.",
+  C1: "Given vs new information, the fall-rise, vanishing vowels, fixed phrases at speed, emphasis, tricky words, numbers, presenting and sarcasm.",
+  C2: "Implication, tempo and asides, extreme casual speech, multi-word verbs, homophones, film dialogue, loanwords and names, storytelling and rhetoric."
+};
+function pUnit(id){ for(var i = 0; i < PRON.length; i++) if(PRON[i].id === id) return PRON[i]; return null; }
+function pIdLike(s){ return /^[a-c][0-2]-\d$/.test(s || ""); }
+function pDone(id){ var r = (PR.pron || {})[id]; return !!(r && r.l != null && r.m != null && r.d != null); }
+function pLvDone(lv){ var n = 0; for(var i = 1; i <= 9; i++) if(pDone(lv.toLowerCase() + "-" + i)) n++; return n; }
+function renderPronHome(){
+  var h = '<section class="hero xhero prn"><div><div class="eyebrow">🗣️ Pronunciation Lab · A0 → C2</div><h1>Sound clear.<br><em>Sound natural.</em></h1>' +
+    '<p class="lead">' + PSTAT.units + ' short units on 7 levels — sounds, word stress, rhythm, weak forms, linking, connected speech and intonation — with audio and three kinds of self-correcting practice: listen and choose, mark it, and dictation of real, fast speech. Made for Spanish speakers; A0–A2 with Spanish support. Model: American English, with UK notes.</p>' +
+    '<div class="row" style="margin-top:18px"><button class="btn prn" onclick="jump(\'plvs\')">Choose your level</button><button class="btn soft" onclick="go(\'pron/A0\')">Start from A0</button></div>' +
+    '<div class="focs">' + Object.keys(PFOCUS).map(function(k){ return '<span>' + PFOCUS[k].ic + ' ' + PFOCUS[k].name + '</span>'; }).join("") + '</div></div>' +
+    '<div class="pdemo"><div class="pd"><b>👂 Listen and choose</b><span>ship or sheep? · thirTEEN or THIRty?</span></div><div class="pd"><b>👆 Mark it</b><span>Turn‿it‿off · I WANT a CUP of COFfee</span></div><div class="pd"><b>✍️ Dictation</b><span>“Whaddaya wanna do?” → What do you want to do?</span></div></div></section>';
+  h += '<section class="sec" id="plvs"><div class="sec-h"><div><h2>Choose your level</h2><p>9 units per level, from the first sounds to the music of advanced English.</p></div></div><div class="levels">';
+  LV_KEYS.forEach(function(k){ var L = LEVELS[k], n = pLvDone(k);
+    h += '<button class="lv" style="--c:' + L.c + '" onclick="go(\'pron/' + k + '\')"><div class="im">' + img(lvImg(k, 700), k) + '<div class="tag">' + k + '</div>' + (L.es ? '<span class="esb">🇪🇸 Spanish support</span>' : "") + '</div>' +
+      '<div class="bd"><h3>' + L.name + '</h3><p>' + PLVD[k] + '</p><div class="go"><span>Open 9 units →</span><small>' + n + ' / 9 done</small></div></div></button>'; });
+  h += '</div></section>';
+  $("app").innerHTML = h; needX("pron");
+}
+function renderPronLevel(lv){
+  var L = LEVELS[lv], us = PRON.filter(function(u){ return u.lv === lv; });
+  var h = '<button class="back" onclick="go(\'pron\')">← 🗣️ Pronunciation Lab</button>' +
+    '<div class="lvhead prn" style="--hb:' + L.hb + ';--c:' + L.c + '"><div class="big">' + lv + '</div><div><div class="eyebrow">🗣️ Pronunciation Lab</div><h1>' + L.name + '</h1><p>' + PLVD[lv] + '</p>' + (L.es ? '<p class="esnote">🇪🇸 Explicaciones con traducción al español.</p>' : "") + '</div><div class="can"><b>' + pLvDone(lv) + ' / 9 units done</b>Each unit: explanation · examples with audio · listen and choose · mark it · dictation.</div></div><div class="punits">';
+  us.forEach(function(u){ var F = PFOCUS[u.focus], r = (PR.pron || {})[u.id];
+    h += '<button class="pu" style="--c:' + L.c + '" onclick="go(\'pron/' + u.id + '\')"><div class="n">' + u.n + '</div><div><small>' + F.ic + ' ' + F.name + '</small><h3>' + esc(u.title) + '</h3><p>' + esc(u.goal) + '</p>' +
+      (pDone(u.id) ? '<span class="done">✓ ' + (r.l + r.m + r.d) + ' / 18</span>' : "") + '</div></button>'; });
+  h += '</div>';
+  var i = LV_KEYS.indexOf(lv);
+  h += '<div class="row" style="margin-top:22px">' + (i > 0 ? '<button class="btn soft" onclick="go(\'pron/' + LV_KEYS[i - 1] + '\')">← ' + LV_KEYS[i - 1] + '</button>' : "") + (i < LV_KEYS.length - 1 ? '<button class="btn soft" onclick="go(\'pron/' + LV_KEYS[i + 1] + '\')">' + LV_KEYS[i + 1] + ' →</button>' : "") + '</div>';
+  $("app").innerHTML = h;
+}
+var PS = null;   // the unit on screen and its practice state
+function pEs(s){ return s ? '<span class="es">' + esc(s) + '</span>' : ""; }
+function renderPronUnit(id){
+  var u = pUnit(id), L = LEVELS[u.lv], F = PFOCUS[u.focus], E = !!L.es, list = PRON.filter(function(x){ return x.lv === u.lv; }), idx = list.indexOf(u);
+  PS = {u: u, pick: u.listen.map(function(it){ return it.pick ? Math.floor(Math.random() * it.o.length) : it.a; }), la: {}, ma: {}, msel: {}, da: {}};
+  var h = '<button class="back" onclick="go(\'pron/' + u.lv + '\')">← ' + u.lv + ' · Pronunciation Lab</button>' +
+    '<div class="phead" style="--c:' + L.c + '"><div class="meta"><span class="lvtag" style="--c:' + L.c + '">' + u.lv + '</span><span>Unit ' + u.n + ' / 9</span><span>' + F.ic + ' ' + F.name + '</span>' +
+    (E ? '<button id="esbtn" class="esbtn' + (ESOFF ? "" : " on") + '" onclick="esToggle()" title="Mostrar / ocultar español">🇪🇸 ES</button>' : "") + '</div><h1>' + esc(u.title) + '</h1><p class="goal">🎯 ' + esc(u.goal) + pEs(u.goal_es) + '</p></div>' +
+    '<div class="lbody pbody' + (E && ESOFF ? " noes" : "") + '" id="lbody">';
+  h += '<div class="pgrid"><div class="pcard"><h2>📖 How it works</h2>' + u.explain.map(function(p, i){ return '<p>' + esc(p) + (u.explain_es ? pEs(u.explain_es[i]) : "") + '</p>'; }).join("") + '</div>' +
+    '<div class="pcard es-sp"><h2>🇨🇱 For Spanish speakers</h2><p>' + esc(u.spanish) + pEs(u.spanish_es) + '</p></div></div>';
+  h += '<div class="pcard"><h2>🔊 Examples <small>Listen at normal speed or slower.</small></h2><div class="pex">' + u.ex.map(function(e, i){
+    return '<div class="pe"><button class="say" onclick="pSay(\'ex\',' + i + ',this)" title="Listen">🔊</button><button class="say slow" onclick="pSay(\'ex\',' + i + ',this,.62)" title="Slower">🐢</button><div><b>' + esc(e.t) + '</b><span class="how">' + esc(e.how) + '</span>' + (e.note ? '<small>' + esc(e.note) + '</small>' : "") + '</div></div>'; }).join("") + '</div></div>';
+  h += '<div class="pcard"><h2>👂 Listen and choose <span class="psc" id="sc-l"></span></h2><div class="pplist">' + u.listen.map(function(it, i){ return '<div class="pq" id="pl' + i + '"></div>'; }).join("") + '</div></div>';
+  h += '<div class="pcard"><h2>👆 Mark it <span class="psc" id="sc-m"></span></h2><div class="pplist">' + u.mark.map(function(it, i){ return '<div class="pq" id="pm' + i + '"></div>'; }).join("") + '</div></div>';
+  h += '<div class="pcard"><h2>✍️ Dictation <span class="psc" id="sc-d"></span><small>Listen and type what you hear — the full words. Then see how it really sounds.</small></h2><div class="pplist">' + u.dict.map(function(it, i){ return '<div class="pq" id="pd' + i + '"></div>'; }).join("") + '</div></div>';
+  h += '<div class="pcard tipc"><h2>👩‍🏫 Class idea</h2><p>' + esc(u.tip) + '</p></div>';
+  h += '<div class="pnav">' + (idx > 0 ? '<button class="btn soft" onclick="go(\'pron/' + list[idx - 1].id + '\')">← ' + esc(list[idx - 1].title) + '</button>' : '<span></span>') +
+    (idx < list.length - 1 ? '<button class="btn prn" onclick="go(\'pron/' + list[idx + 1].id + '\')">Next: ' + esc(list[idx + 1].title) + ' →</button>' : '<button class="btn prn" onclick="go(\'pron/' + u.lv + '\')">Back to ' + u.lv + ' units</button>') + '</div></div>';
+  $("app").innerHTML = h;
+  u.listen.forEach(function(it, i){ pDrawL(i); }); u.mark.forEach(function(it, i){ pDrawM(i); }); u.dict.forEach(function(it, i){ pDrawD(i); });
+  pScore();
+}
+function pSay(kind, i, btn, rate){
+  var u = PS.u, it = kind === "l" ? u.listen[i] : null;
+  var t = kind === "ex" ? u.ex[i].t : kind === "l" ? (it.pick ? it.o[PS.pick[i]] : it.say) : kind === "m" ? u.mark[i].w.join(u.mark[i].word ? "" : " ") : u.dict[i].say;
+  say(t, {btn: btn, rate: rate || .95});
+}
+function pCompare(i){ var it = PS.u.listen[i]; readSeq(it.o.map(function(o){ return {t: o}; }), {rate: .85}); }
+function pDrawL(i){
+  var it = PS.u.listen[i], a = PS.la[i], ans = PS.pick[i], c = $("pl" + i);
+  c.innerHTML = '<div class="pqh"><button class="play" onclick="pSay(\'l\',' + i + ',this)">▶</button><span>' + (i + 1) + '. ' + esc(it.q) + '</span></div><div class="qo' + (a !== undefined ? " lock" : "") + '">' +
+    it.o.map(function(o, k){ return '<button class="' + (a === undefined ? "" : k === ans ? "ok" : k === a ? "no" : "") + '" onclick="pAnsL(' + i + ',' + k + ')">' + esc(o) + '</button>'; }).join("") + '</div>' +
+    (a !== undefined ? '<div class="fb">' + (a === ans ? "✅ " : "❌ You heard “" + esc(it.o[ans]) + "”. ") + esc(it.why) + (it.pick ? ' <button class="lnk" onclick="pCompare(' + i + ')">🔊 Compare: ' + it.o.map(esc).join(" · ") + '</button>' : "") + '</div>' : "");
+}
+function pAnsL(i, k){ if(PS.la[i] !== undefined) return; PS.la[i] = k; if(k === PS.pick[i]) chime(); pDrawL(i); pScore(); }
+function pDrawM(i){
+  var it = PS.u.mark[i], sel = PS.msel[i] || [], done = PS.ma[i] !== undefined, c = $("pm" + i), A = it.a, h = "";
+  var cls = function(k){ var s = sel.indexOf(k) >= 0, r = A.indexOf(k) >= 0; return done ? (r && s ? " ok" : r ? " miss" : s ? " no" : "") : (s ? " sel" : ""); };
+  if(it.mode === "link"){
+    it.w.forEach(function(w, k){ h += '<span class="tk">' + esc(w) + '</span>'; if(k < it.w.length - 1) h += '<button class="gp' + cls(k) + '" onclick="pTap(' + i + ',' + k + ')" title="Tap if these words link">‿</button>'; });
+  } else {
+    it.w.forEach(function(w, k){ h += '<button class="tb' + cls(k) + (it.word ? " syl" : "") + '" onclick="pTap(' + i + ',' + k + ')">' + esc(w) + '</button>'; });
+  }
+  c.innerHTML = '<div class="pqh"><button class="play" onclick="pSay(\'m\',' + i + ',this)">▶</button><span>' + (i + 1) + '. ' + esc(it.q) + '</span></div><div class="toks' + (it.word ? " word" : "") + (it.mode === "link" ? " link" : "") + '">' + h + '</div>' +
+    (done ? '<div class="fb">' + (PS.ma[i] ? "✅ " : "❌ ") + esc(it.why) + '</div>' : '<button class="btn sm prn" onclick="pCheckM(' + i + ')"' + (sel.length ? "" : " disabled") + '>Check</button>');
+}
+function pTap(i, k){ if(PS.ma[i] !== undefined) return; var s = PS.msel[i] = PS.msel[i] || [], p = s.indexOf(k); if(p >= 0) s.splice(p, 1); else s.push(k); pDrawM(i); }
+function pCheckM(i){ var it = PS.u.mark[i], s = (PS.msel[i] || []).slice().sort(), a = it.a.slice().sort(); PS.ma[i] = s.length === a.length && s.every(function(x, k){ return x === a[k]; }); if(PS.ma[i]) chime(); pDrawM(i); pScore(); }
+function pDrawD(i){
+  var it = PS.u.dict[i], r = PS.da[i], c = $("pd" + i);
+  c.innerHTML = '<div class="pqh"><button class="play" onclick="pSay(\'d\',' + i + ',this)">▶</button><button class="play slow" onclick="pSay(\'d\',' + i + ',this,.62)" title="Slower">🐢</button><span>' + (i + 1) + '.</span>' +
+    '<input class="din" id="din' + i + '" placeholder="Type what you hear…" ' + (r ? "disabled" : "") + ' value="' + esc(r ? r.v : "") + '" onkeydown="if(event.key===\'Enter\')pCheckD(' + i + ')">' + (r ? "" : '<button class="btn sm prn" onclick="pCheckD(' + i + ')">Check</button>') + '</div>' +
+    (r ? '<div class="fb">' + (r.ok ? "✅ " : "❌ ") + '<b>' + esc(it.a) + '</b><span class="how">sounds like: ' + esc(it.how) + '</span>' + (it.why ? '<small>' + esc(it.why) + '</small>' : "") + '</div>' : "");
+}
+// it's = it is, I'd = I would, can not = cannot … on top of the club's norm()
+function pNorm(s){
+  return norm(String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/(\d)\.(\d)/g, "$1·$2").replace(/[-–—…]/g, " ").replace(/[’‘]/g, "'")   /* keep decimals: 2.5 ≠ 25 */.replace(/\b(it|that|there|what|who|he|she|here|where|how)'s\b/gi, "$1 is").replace(/'d\b/g, " would"))
+    .replace(/\bcan not\b/g, "cannot").replace(/\bok\b/g, "okay");
+}
+function pCheckD(i){
+  var it = PS.u.dict[i], v = ($("din" + i).value || "").trim(); if(!v){ toast("✍️ Type what you hear first."); return; }
+  // spelled letters and digits may come with or without spaces ("J O R G E" = "Jorge", "9 1 3 0" = "9130")
+  var ok = [it.a].concat(it.alt || []).some(function(a){ return pNorm(a) === pNorm(v) || pNorm(a).replace(/\s+/g, "") === pNorm(v).replace(/\s+/g, ""); });
+  PS.da[i] = {v: v, ok: ok}; if(ok) chime(); pDrawD(i); pScore();
+}
+function pScore(){
+  var u = PS.u, n = function(o){ return Object.keys(o).length; }, ok = function(o){ return Object.keys(o).filter(function(k){ return o[k] === true || (o[k] && o[k].ok === true); }).length; };
+  var l = Object.keys(PS.la).filter(function(k){ return PS.la[k] === PS.pick[k]; }).length, m = ok(PS.ma), d = ok(PS.da);
+  if($("sc-l")) $("sc-l").textContent = n(PS.la) ? l + " / " + u.listen.length : "";
+  if($("sc-m")) $("sc-m").textContent = n(PS.ma) ? m + " / " + u.mark.length : "";
+  if($("sc-d")) $("sc-d").textContent = n(PS.da) ? d + " / " + u.dict.length : "";
+  PR.pron = PR.pron || {}; var r = PR.pron[u.id] || {}, ch = false;
+  // a block counts once every item in it has been answered; keep the best score
+  [["l", n(PS.la) === u.listen.length, Math.round(l / u.listen.length * 6)], ["m", n(PS.ma) === u.mark.length, Math.round(m / u.mark.length * 6)], ["d", n(PS.da) === u.dict.length, Math.round(d / u.dict.length * 6)]].forEach(function(b){
+    if(b[1] && (r[b[0]] == null || b[2] > r[b[0]])){ r[b[0]] = b[2]; ch = true; } });
+  if(ch){ PR.pron[u.id] = r; saveP(); if(pDone(u.id)) toast("🎉 Unit complete: " + (r.l + r.m + r.d) + " / 18"); }
 }
 
 route();
