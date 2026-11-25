@@ -703,7 +703,47 @@ nav button.nprn.on{background:var(--prn-soft);color:var(--prn-d);box-shadow:inse
   .punits,.pgrid,.pex{grid-template-columns:1fr}
   .phead h1{font-size:27px}
 }
-.xhint{margin:14px 0 0;border:1px dashed var(--idm);border-radius:14px;padding:10px 14px;background:var(--idm-soft);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-weight:700;color:var(--idm-d)}.xhint button{font-weight:800;color:#fff;background:var(--idm);border-radius:10px;padding:7px 12px}</style>
+.xhint{margin:14px 0 0;border:1px dashed var(--idm);border-radius:14px;padding:10px 14px;background:var(--idm-soft);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-weight:700;color:var(--idm-d)}.xhint button{font-weight:800;color:#fff;background:var(--idm);border-radius:10px;padding:7px 12px}
+/* ---------- model text: player + tap-a-word ---------- */
+.bb,.para{cursor:default}
+.model .w{cursor:pointer;border-radius:4px;transition:background .12s}
+.model .w:hover{background:#e7f1ff;box-shadow:0 1px 0 var(--blue-2)}
+.model .w.won,.model mark.tl.won{background:#d9e9ff;box-shadow:0 2px 0 var(--blue)}
+.model mark.tl{cursor:pointer}
+.mplayer{border:1px solid var(--line);border-radius:16px;padding:12px;background:#fff;display:grid;gap:10px}
+.mprow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mpb{display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 12px;font-weight:900;font-size:14px;color:var(--ink);transition:.12s}
+.mpb:hover:not([disabled]){border-color:var(--blue);color:var(--blue)}
+.mpb.mpplay{background:var(--blue);border-color:var(--blue);color:#fff}
+.mpb.mpplay:hover:not([disabled]){background:var(--blue-d);color:#fff}
+.mpb.mpplay.on{background:var(--green);border-color:var(--green)}
+.mpb[disabled]{opacity:.5;cursor:default}
+.mpspeed{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.mpspeed span{font-size:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-2);margin-right:4px}
+.mpspeed button{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:5px 10px;font-weight:800;font-size:13px;color:var(--gray)}
+.mpspeed button.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.mpstat{font-size:12.5px;font-weight:800;color:var(--gray)}
+.mpstat:empty{display:none}
+.wpop{position:absolute;z-index:80;width:min(320px,calc(100vw - 16px));background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 36px rgba(17,24,39,.18);padding:12px 14px 12px;font-size:14.5px;line-height:1.45}
+.wpop::before{content:"";position:absolute;top:-7px;left:var(--ax,30px);width:12px;height:12px;background:#fff;border-left:1px solid var(--line);border-top:1px solid var(--line);transform:translateX(-50%) rotate(45deg)}
+.wpop.up::before{top:auto;bottom:-7px;transform:translateX(-50%) rotate(225deg)}
+.wpop .wx{position:absolute;top:4px;right:6px;width:26px;height:26px;border-radius:8px;font-size:18px;line-height:1;color:var(--gray-2)}
+.wpop .wx:hover{background:var(--soft);color:var(--ink)}
+.wpop .wh{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding-right:24px;margin-bottom:6px}
+.wpop .wh b{font-size:1.15em;letter-spacing:-.01em}
+.wpop .wsay{width:28px;height:28px;border-radius:8px;background:var(--orange-soft);border:1px solid #fbdcc0;font-size:13px}
+.wpop .wp{font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--blue);background:var(--tint);border-radius:999px;padding:2px 8px}
+.wpop .wb{font-size:13px;font-weight:800;color:var(--gray)}
+.wpop .ws{display:flex;gap:8px;padding:6px 0;border-top:1px solid var(--line)}
+.wpop .ws:first-child{border-top:0}
+.wpop .ws i{font-style:normal;font-weight:900;color:var(--gray-2);font-size:12px;padding-top:2px}
+.wpop .d{display:block;color:var(--ink)}
+.wpop .d em{font-style:normal;font-size:11px;font-weight:900;text-transform:uppercase;color:var(--blue);margin-right:2px}
+.wpop .es{display:block;color:var(--green-d);font-weight:700;margin-top:2px}
+.wpop .st{display:block;color:var(--gray);font-size:12.5px;margin-top:3px}
+.wpop .wnone{color:var(--gray);font-size:13.5px}
+.wpop img.emoji{display:inline-block;width:1.05em;height:1.05em;margin:0 .05em;vertical-align:-.15em}
+</style>
 </head>
 <body>
 <header><div class="hw">
@@ -749,6 +789,8 @@ var PFOCUS = {"sounds":{"ic":"🔤","name":"Sounds"},"stress":{"ic":"🎯","name
 var ISTAT = {"n":1115,"nNew":400,"nLes":715,"per":{"A2":112,"B1":280,"B2":284,"C1":239,"C2":200},"th":{"animals":66,"food":66,"success":89,"people":95,"body":121,"money":83,"time":67,"feelings":60,"travel":59,"weather":51,"risk":80,"colors":38,"sport":51,"trouble":79,"talk":110}};
 var PSTAT = {"units":63,"ready":63};
 var IDM_V = "4361f37018", PRN_V = "7e47788703";
+
+var DICT_V = "77d07573b2";
 </script>
 <script>
 /* =====================================================================
@@ -932,7 +974,7 @@ new MutationObserver(function(){ if(emoP) return; emoP = true; requestAnimationF
 window.addEventListener("load", emojify);
 
 /* ---------- router: #home, #B1, #lesson/b1-food, #work, #work/B1, #lesson/b1-w-email, #bank, #bank/func, #exam, #exam/ielts, #exam/toefl ---------- */
-function cleanup(){ stopAllRings(); stopRead(); recCancel(); clockStop(); try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){} SAYMAP = {}; SAYN = 0; }
+function cleanup(){ tapClose(); MP.state = "idle"; stopAllRings(); stopRead(); recCancel(); clockStop(); try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){} SAYMAP = {}; SAYN = 0; }
 function go(h){ if(location.hash === "#" + h) route(); else location.hash = h; }
 function route(){
   cleanup();
@@ -1271,7 +1313,7 @@ var NOTES = {
 /* Spanish support (A0/A1): lines with class "es", hidden with the 🇪🇸 button */
 var UI_ES = {
   warm: "Haz y responde estas preguntas con un compañero.",
-  model: "Toca una línea para escucharla; toca una expresión destacada para ver su significado.",
+  model: "Presiona ▶ Play para escuchar. Toca cualquier palabra para ver su significado en inglés y en español, y una expresión destacada para ver su explicación.",
   lang: "Lee el significado y el ejemplo. Toca 🔊 para escuchar y fíjate dónde va el acento (MAYÚSCULAS).",
   func: "Toca una frase para escucharla.",
   pron: "Escucha y repite cada línea al mismo tiempo que el audio. Grábate y compara.",
@@ -1296,6 +1338,7 @@ function markInfo(el){
 }
 
 function renderLesson(L){
+  needDict();
   CUR = L; SAYMAP = {}; SAYN = 0;
   var t = TOPICS[L.tp], W = !!t.trk, list = W ? wByLevel(L.lv) : byLevel(L.lv), idx = list.indexOf(L), LV = LEVELS[L.lv], E = hasEs(L.lv), U = E ? UI_ES : {};
   var h = '<button class="back" onclick="go(\'' + (W ? "work/" : "") + L.lv + '\')">← ' + (W ? "💼 " : "") + L.lv + ' · ' + (W ? "English at Work" : LV.name) + '</button>' +
@@ -1313,12 +1356,12 @@ function renderLesson(L){
   var M = L.model, sp = [];
   if(M.kind === "dialogue") M.lines.forEach(function(l){ if(sp.indexOf(l.sp) < 0) sp.push(l.sp); });
   var lines = M.kind === "dialogue" ? M.lines.map(function(l){ var k = sp.indexOf(l.sp); return {t: plain(l.t), v: k, p: [1, 1.12, .92][k % 3]}; }) : M.paras.map(function(p){ return {t: plain(p), v: 0}; });
-  ST.model = lines;
-  h += blk(2, "s-model", (M.kind === "dialogue" ? "💬 " : "📰 ") + esc(M.title), "10 min", esc(M.intro) + " Tap a line to hear it; tap a <mark class=\"tl\" style=\"cursor:default\">highlighted</mark> expression to see its meaning.", NOTES.model, E ? (M.intro_es ? M.intro_es + " " : "") + U.model : "") +
-    '<div class="model"><div>' + (M.kind === "dialogue" ? '<div class="dlg">' + M.lines.map(function(l, i){ var k = sp.indexOf(l.sp);
-      return '<div class="ln s' + (k % 3) + '" id="ml' + i + '"><span class="sp">' + esc(l.sp.slice(0, 2)) + '</span><div class="bb" onclick="modelLine(' + i + ')"><small>' + esc(l.sp) + '</small>' + markText(l.t) + esL(l.es) + '</div></div>'; }).join("") + '</div>'
-      : M.paras.map(function(p, i){ return '<p class="para" id="ml' + i + '" onclick="modelLine(' + i + ')">' + markText(p) + esL(M.paras_es && M.paras_es[i]) + '</p>'; }).join("")) + '</div>' +
-    '<div class="mside"><div class="im">' + img(lessonSrc(L, 700), L.title) + '</div><div class="row">' + tbtn("🔊 Listen", "modelPlay(.95)", "") + tbtn("🐢 Slow", "modelPlay(.75)") + tbtn("⏹", "stopRead()") + '</div>' +
+  ST.model = lines; mpReset();
+  h += blk(2, "s-model", (M.kind === "dialogue" ? "💬 " : "📰 ") + esc(M.title), "10 min", esc(M.intro) + " Press ▶ Play to listen. Tap any word to see its meaning in English and Spanish; tap a <mark class=\"tl\" style=\"cursor:default\">highlighted</mark> expression to see it explained.", NOTES.model, E ? (M.intro_es ? M.intro_es + " " : "") + U.model : "") +
+    '<div class="model" onclick="tapWord(event)"><div>' + (M.kind === "dialogue" ? '<div class="dlg">' + M.lines.map(function(l, i){ var k = sp.indexOf(l.sp);
+      return '<div class="ln s' + (k % 3) + '" id="ml' + i + '"><span class="sp">' + esc(l.sp.slice(0, 2)) + '</span><div class="bb"><small>' + esc(l.sp) + '</small>' + tapText(l.t) + esL(l.es) + '</div></div>'; }).join("") + '</div>'
+      : M.paras.map(function(p, i){ return '<p class="para" id="ml' + i + '">' + tapText(p) + esL(M.paras_es && M.paras_es[i]) + '</p>'; }).join("")) + '</div>' +
+    '<div class="mside"><div class="im">' + img(lessonSrc(L, 700), L.title) + '</div>' + mpHtml() +
     '<div class="qz">' + M.questions.map(function(q, k){ return '<div class="q"><div class="qt"><span>' + (k + 1) + '.</span>' + esc(q.q) + '</div><div class="qo" style="grid-template-columns:1fr" id="mq' + k + '">' +
       q.opts.map(function(o, j){ return '<button data-ok="' + (j === q.a ? 1 : 0) + '" onclick="mcq(\'mq' + k + '\',this)">' + esc(o) + '</button>'; }).join("") + '</div></div>'; }).join("") + '</div></div></div></div>';
 
@@ -1919,6 +1962,133 @@ function pScore(){
     if(b[1] && (r[b[0]] == null || b[2] > r[b[0]])){ r[b[0]] = b[2]; ch = true; } });
   if(ch){ PR.pron[u.id] = r; saveP(); if(pDone(u.id)) toast("🎉 Unit complete: " + (r.l + r.m + r.d) + " / 18"); }
 }
+
+/* =====================================================================
+   MODEL TEXT · player (PLAY · PAUSE · SPEED) and tap-a-word bubbles
+   The dictionary lives in dict.js and loads the first time a lesson opens.
+   ===================================================================== */
+var MP = {i: 0, state: "idle", speed: 1};
+try{ var sp0 = parseFloat(localStorage.getItem("tw_cc_speed")); if(sp0 >= .5 && sp0 <= 1.5) MP.speed = sp0; }catch(e){}
+var MP_SPEEDS = [.6, .8, 1, 1.2];
+function mpHtml(){
+  return '<div class="mplayer" id="mplayer"><div class="mprow"><button class="mpb mpplay" id="mpPlay" onclick="mpPlay()">▶ Play</button><button class="mpb" id="mpPause" onclick="mpPause()" disabled>⏸ Pause</button></div>' +
+    '<div class="mpspeed"><span>Speed</span>' + MP_SPEEDS.map(function(s){ return '<button data-s="' + s + '" class="' + (s === MP.speed ? "on" : "") + '" onclick="mpSpeed(' + s + ')">' + s + '×</button>'; }).join("") + '</div>' +
+    '<div class="mpstat" id="mpStat"></div></div>';
+}
+function mpReset(){ MP.i = 0; MP.state = "idle"; }
+function mpSync(){
+  var p = $("mpPlay"), q = $("mpPause"), s = $("mpStat"), n = ST.model ? ST.model.length : 0;
+  if(!p) return;
+  p.textContent = MP.state === "paused" ? "▶ Resume" : "▶ Play";
+  p.classList.toggle("on", MP.state === "playing"); p.disabled = MP.state === "playing";
+  q.disabled = MP.state !== "playing";
+  s.textContent = MP.state === "idle" ? "" : (MP.state === "paused" ? "Paused · " : "Playing · ") + (MP.i + 1) + " / " + n;
+  document.querySelectorAll(".mpspeed button").forEach(function(b){ b.classList.toggle("on", parseFloat(b.getAttribute("data-s")) === MP.speed); });
+}
+// plays the model text from line MP.i; the club's reader (READ / readNext) does the speaking
+function mpPlay(){
+  if(!window.speechSynthesis){ toast("🔇 No audio in this browser."); return; }
+  if(!ST.model || !ST.model.length) return;
+  if(MP.state !== "paused") MP.i = 0;
+  MP.state = "playing"; tapClose();
+  try{ speechSynthesis.cancel(); }catch(e){}
+  READ.on = true; READ.list = ST.model; READ.i = MP.i; READ.rate = .95 * MP.speed;
+  READ.cb = function(k){
+    if(k >= 0){ MP.i = k; modelHi(k); mpSync(); return; }
+    if(MP.state === "playing"){ MP.state = "idle"; MP.i = 0; modelHi(-1); mpSync(); }   // the end of the text (a pause is not the end)
+  };
+  readNext(); mpSync();
+}
+function mpPause(){
+  if(MP.state !== "playing") return;
+  MP.state = "paused"; READ.on = false;
+  try{ speechSynthesis.cancel(); }catch(e){}
+  mpSync();
+}
+// a new speed applies at once: the current line starts again at that speed
+function mpSpeed(s){
+  MP.speed = s; try{ localStorage.setItem("tw_cc_speed", String(s)); }catch(e){}
+  if(MP.state === "playing"){ mpPause(); setTimeout(mpPlay, 80); } else mpSync();
+}
+
+/* ---------- tap a word: meaning + Spanish ---------- */
+var DICT = null, DICTL = {loading: false, cbs: []};
+function needDict(cb){
+  if(DICT){ if(cb) cb(); return; }
+  if(cb) DICTL.cbs.push(cb);
+  if(DICTL.loading) return;
+  DICTL.loading = true;
+  var s = document.createElement("script"); s.src = "dict.js?v=" + DICT_V;
+  s.onload = function(){ DICT = window.DICT || {}; var c = DICTL.cbs; DICTL.cbs = []; c.forEach(function(f){ f(); }); };
+  s.onerror = function(){ DICTL.loading = false; DICTL.cbs = []; s.parentNode.removeChild(s); var b = $("wpop"); if(b) b.querySelector(".wbody").innerHTML = '<p class="wnone">📶 The dictionary could not be loaded.</p>'; };
+  document.head.appendChild(s);
+}
+// the text of a line: every word can be tapped; [[expressions]] keep their highlight
+function tapText(t){
+  return String(t).split(/(\[\[.+?\]\])/).map(function(seg){
+    var m = seg.match(/^\[\[(.+)\]\]$/);
+    if(m) return '<mark class="tl">' + esc(m[1]) + '</mark>';
+    // find the words in the raw text, then escape each piece (escaping first would turn &quot; into a word)
+    var out = "", last = 0, re = /[A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’-][A-Za-zÀ-ÖØ-öø-ÿ]+)*/g, w;   // accents too: Andrés, Valparaíso, café
+    while((w = re.exec(seg))){ out += esc(seg.slice(last, w.index)) + '<span class="w">' + esc(w[0]) + '</span>'; last = w.index + w[0].length; }
+    return out + esc(seg.slice(last));
+  }).join("");
+}
+var TAPPOS = {n: "noun", v: "verb", adj: "adjective", adv: "adverb", pron: "pronoun", det: "determiner", prep: "preposition", conj: "conjunction", int: "interjection", num: "number", contr: "short form", abbr: "abbreviation", name: "name"};
+function tapKey(w){ return String(w).toLowerCase().replace(/’/g, "'"); }
+function tapFind(w){
+  var k = tapKey(w), d = DICT || {};
+  if(d[k]) return d[k];
+  var t = k.replace(/'s$|s'$/, ""); if(d[t]) return d[t];
+  return null;
+}
+function tapWord(ev){
+  var t = ev.target, w = t.closest ? t.closest(".w") : null, m = t.closest ? t.closest("mark.tl") : null;
+  if(w){ ev.stopPropagation(); tapShow(w); }
+  else if(m){ ev.stopPropagation(); markInfo(m); }
+}
+function tapShow(el){
+  var word = el.textContent;
+  tapOpen(el, '<div class="wh"><b>' + esc(word) + '</b><button class="wsay" title="Listen" onclick="say(this.dataset.t,{btn:this})" data-t="' + esc(word) + '">🔊</button></div><div class="wbody"><p class="wnone">Loading…</p></div>');
+  needDict(function(){
+    var b = $("wpop"); if(!b || b.dataset.for !== word) return;
+    var e = tapFind(word), body = b.querySelector(".wbody");
+    if(!e){ body.innerHTML = '<p class="wnone">No entry for this word yet.</p>'; return; }
+    // entry: [part of speech, base form, [[meaning, Spanish, part of speech], …]]
+    var p = e[0], base = e[1], ms = e[2];
+    b.querySelector(".wh").insertAdjacentHTML("beforeend", '<span class="wp">' + (TAPPOS[p] || p) + '</span>' + (base ? '<span class="wb">→ ' + esc(base) + '</span>' : ""));
+    body.innerHTML = ms.map(function(s, i){ return '<div class="ws">' + (ms.length > 1 ? '<i>' + (i + 1) + '</i>' : "") + '<div><span class="d">' + (s[2] && s[2] !== p ? '<em>' + (TAPPOS[s[2]] || s[2]) + '</em> ' : "") + esc(s[0]) + '</span><span class="es">🇪🇸 ' + esc(s[1]) + '</span></div></div>'; }).join("");
+    tapPlace();
+  });
+}
+// a highlighted expression: its meaning from the lesson (no audio until 🔊 is pressed)
+function markInfo(el){
+  var ws = low(el.textContent).split(" ").map(stem), best = null, bs = 0;
+  (CUR.lang || []).forEach(function(it){ var ew = low(it.e).split(" ").filter(function(w){ return w.length > 1 && !SKIP[w]; }); if(!ew.length) return;
+    var hit = ew.filter(function(w){ return ws.indexOf(stem(w)) >= 0; }).length / ew.length; if(hit > bs){ bs = hit; best = it; } });
+  if(!(best && bs >= .5)){ toast(el.textContent); return; }
+  tapOpen(el, '<div class="wh"><b>' + esc(best.e) + '</b><button class="wsay" title="Listen" onclick="say(this.dataset.t,{btn:this})" data-t="' + esc(best.e) + '">🔊</button><span class="wp">' + esc(TYPES[best.t] || "expression") + '</span></div>' +
+    '<div class="wbody"><div class="ws"><div><span class="d">' + esc(best.d) + '</span>' + (best.es ? '<span class="es">🇪🇸 ' + esc(best.es) + '</span>' : "") + (best.s ? '<span class="st">🗣 ' + esc(best.s) + '</span>' : "") + '</div></div></div>');
+}
+var TAPEL = null;
+function tapOpen(el, html){
+  tapClose();
+  var b = document.createElement("div"); b.className = "wpop"; b.id = "wpop"; b.dataset.for = el.textContent;
+  b.innerHTML = '<button class="wx" onclick="tapClose()" title="Close">×</button>' + html;
+  document.body.appendChild(b); TAPEL = el; el.classList.add("won"); tapPlace();
+}
+function tapPlace(){
+  var b = $("wpop"); if(!b || !TAPEL) return;
+  var r = TAPEL.getBoundingClientRect(), bw = b.offsetWidth, bh = b.offsetHeight, vw = document.documentElement.clientWidth;
+  var left = Math.max(8, Math.min(r.left + r.width / 2 - bw / 2, vw - bw - 8)), top = r.bottom + 8;
+  if(top + bh > window.innerHeight - 8 && r.top - bh - 8 > 0){ top = r.top - bh - 8; b.classList.add("up"); } else b.classList.remove("up");
+  b.style.left = (left + window.scrollX) + "px"; b.style.top = (top + window.scrollY) + "px";
+  b.style.setProperty("--ax", Math.max(14, Math.min(bw - 14, r.left + r.width / 2 - left)) + "px");
+}
+function tapClose(){ var b = $("wpop"); if(b) b.parentNode.removeChild(b); if(TAPEL) TAPEL.classList.remove("won"); TAPEL = null; }
+document.addEventListener("click", function(ev){ var b = $("wpop"); if(b && !b.contains(ev.target) && !(ev.target.closest && ev.target.closest(".w,mark.tl"))) tapClose(); });
+document.addEventListener("keydown", function(ev){ if(ev.key === "Escape") tapClose(); });
+window.addEventListener("resize", tapPlace);
 
 route();
 </script>
